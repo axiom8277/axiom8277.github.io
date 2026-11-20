@@ -1,0 +1,1538 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>911大赛爆料_全网热点_影像社区官方报道</title>
+<meta name="description" content="911大赛爆料官方网站，聚焦赛事热点、幕后爆料与创作者内容生态，提供高清原创内容与专业报道，值得信赖的影像社区。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0f14'/%3E%3Cpath d='M20 18h9v12h6V18h9v28h-9V36h-6v10h-9z' fill='%23ff3b3b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --n911-bg:#0e0f14;
+  --n911-surface:#15171f;
+  --n911-surface-2:#1c1f2a;
+  --n911-line:#2a2e3c;
+  --n911-text:#eceef5;
+  --n911-muted:#8d93a6;
+  --n911-accent:#ff3b3b;
+  --n911-accent-soft:rgba(255,59,59,.12);
+  --n911-blue:#4d8dff;
+  --n911-gold:#ffc24d;
+  --n911-radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--n911-bg);
+  color:var(--n911-text);
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+.n911-wrap{width:min(1200px,92%);margin:0 auto}
+.n911-section{padding:64px 0;border-bottom:1px solid var(--n911-line)}
+.n911-section:last-of-type{border-bottom:none}
+.n911-eyebrow{display:inline-block;font-size:13px;letter-spacing:.18em;color:var(--n911-accent);text-transform:uppercase;margin-bottom:12px;font-weight:700}
+.n911-h2{font-size:clamp(24px,3vw,34px);letter-spacing:.02em;margin-bottom:14px}
+.n911-sub{color:var(--n911-muted);font-size:15px;max-width:780px}
+.n911-section-head{margin-bottom:36px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+
+/* 吸顶：公告条 + 页头 */
+.n911-sticky-top{position:sticky;top:0;z-index:80}
+.n911-notice{
+  background:linear-gradient(90deg,#2a0d0d,#3c1010 50%,#2a0d0d);
+  border-bottom:1px solid #4a1414;
+  font-size:13px;color:#ffc9c9;
+}
+.n911-notice .n911-wrap{display:flex;align-items:center;gap:12px;padding:8px 0;overflow:hidden}
+.n911-notice-tag{
+  flex:0 0 auto;background:var(--n911-accent);color:#fff;font-weight:700;
+  font-size:11px;padding:2px 8px;border-radius:4px;letter-spacing:.08em;
+}
+.n911-notice-track{display:flex;gap:36px;white-space:nowrap;overflow:hidden;flex:1}
+.n911-notice-track span{flex:0 0 auto;opacity:.95}
+.n911-notice-track b{color:#fff;font-weight:600}
+
+.n911-header{background:rgba(14,15,20,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--n911-line)}
+.n911-header .n911-wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:18px}
+.n911-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.02em}
+.n911-logo-mark{
+  width:34px;height:34px;border-radius:9px;display:grid;place-items:center;
+  background:linear-gradient(145deg,#ff3b3b,#a81414);font-size:15px;font-weight:900;color:#fff;
+  letter-spacing:-.5px;
+}
+.n911-logo-sub{font-size:11px;color:var(--n911-muted);letter-spacing:.24em;font-weight:500;display:block;line-height:1}
+.n911-nav{display:flex;gap:4px;align-items:center}
+.n911-nav a{
+  font-size:14px;color:#c3c8d6;padding:8px 12px;border-radius:8px;transition:.2s;white-space:nowrap;
+}
+.n911-nav a:hover{color:#fff;background:var(--n911-surface-2)}
+.n911-header-tools{display:flex;align-items:center;gap:10px}
+.n911-search{
+  display:flex;align-items:center;background:var(--n911-surface-2);border:1px solid var(--n911-line);
+  border-radius:999px;padding:6px 6px 6px 14px;gap:8px;transition:.2s;
+}
+.n911-search:focus-within{border-color:var(--n911-accent);box-shadow:0 0 0 3px var(--n911-accent-soft)}
+.n911-search input{
+  background:none;border:none;outline:none;color:#fff;font-size:13px;width:150px;
+}
+.n911-search input::placeholder{color:#6c7285}
+.n911-search button{
+  background:var(--n911-accent);color:#fff;font-size:13px;padding:4px 12px;border-radius:999px;font-weight:600;
+}
+.n911-hamburger{display:none;width:40px;height:40px;border-radius:9px;background:var(--n911-surface-2);border:1px solid var(--n911-line);align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.n911-hamburger i{display:block;width:18px;height:2px;background:#dfe3ee;border-radius:2px;transition:.25s}
+.n911-hamburger.n911-open i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.n911-hamburger.n911-open i:nth-child(2){opacity:0}
+.n911-hamburger.n911-open i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+.n911-mobile-nav{display:none;background:var(--n911-surface);border-bottom:1px solid var(--n911-line)}
+.n911-mobile-nav.n911-show{display:block}
+.n911-mobile-nav ul{padding:10px 0}
+.n911-mobile-nav a{display:block;padding:11px 4%;font-size:15px;color:#cfd4e2}
+.n911-mobile-nav a:hover{background:var(--n911-surface-2);color:#fff}
+
+/* 首屏 */
+.n911-hero{position:relative;overflow:hidden;padding:72px 0 60px;background:
+  radial-gradient(900px 420px at 78% 10%,rgba(255,59,59,.16),transparent 60%),
+  radial-gradient(700px 380px at 8% 90%,rgba(77,141,255,.10),transparent 60%),
+  var(--n911-bg);
+}
+.n911-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.n911-hero h1{font-size:clamp(38px,5.4vw,66px);line-height:1.08;letter-spacing:.01em;margin-bottom:18px}
+.n911-hero h1 .n911-accent{color:var(--n911-accent)}
+.n911-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;background:var(--n911-accent-soft);
+  border:1px solid rgba(255,59,59,.35);color:#ffb3b3;font-size:12.5px;font-weight:600;
+  padding:6px 14px;border-radius:999px;margin-bottom:22px;letter-spacing:.04em;
+}
+.n911-hero-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--n911-accent);box-shadow:0 0 0 4px rgba(255,59,59,.18);animation:n911-pulse 1.8s infinite}
+@keyframes n911-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.n911-hero-lead{color:#b9bfd0;font-size:16px;margin-bottom:26px;max-width:560px}
+.n911-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.n911-btn{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;
+  font-size:14.5px;font-weight:600;transition:.2s;border:1px solid transparent;
+}
+.n911-btn-primary{background:var(--n911-accent);color:#fff;box-shadow:0 8px 26px -10px rgba(255,59,59,.8)}
+.n911-btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(255,59,59,.9)}
+.n911-btn-ghost{background:var(--n911-surface-2);border-color:var(--n911-line);color:#dbe0ec}
+.n911-btn-ghost:hover{border-color:#454b5e;transform:translateY(-2px)}
+.n911-hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid var(--n911-line);padding-top:24px}
+.n911-hero-stats strong{display:block;font-size:26px;font-weight:800;letter-spacing:.01em}
+.n911-hero-stats span{font-size:12.5px;color:var(--n911-muted);letter-spacing:.04em}
+.n911-hero-visual{position:relative}
+.n911-hero-cover{border-radius:20px;overflow:hidden;border:1px solid #333849;box-shadow:0 30px 70px -30px rgba(0,0,0,.9);position:relative}
+.n911-hero-cover svg{width:100%;height:auto;display:block}
+.n911-hero-float{
+  position:absolute;left:-20px;bottom:26px;background:rgba(21,23,31,.92);border:1px solid var(--n911-line);
+  border-radius:14px;padding:12px 16px;font-size:12.5px;backdrop-filter:blur(10px);display:flex;align-items:center;gap:10px;
+}
+.n911-hero-float .n911-dot{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 4px rgba(61,220,132,.15)}
+.n911-hero-float b{color:#fff}
+.n911-hero-float small{color:var(--n911-muted);display:block;font-size:11px}
+
+/* 关于与解析 */
+.n911-about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}
+.n911-about-lead{
+  background:linear-gradient(160deg,var(--n911-surface),var(--n911-surface-2));
+  border:1px solid var(--n911-line);border-radius:var(--n911-radius);padding:28px 28px 24px;
+  height:fit-content;
+}
+.n911-about-lead h3{font-size:20px;margin-bottom:12px}
+.n911-about-lead p{color:#a9b0c2;font-size:14.5px;margin-bottom:14px}
+.n911-about-lead .n911-quote{border-left:3px solid var(--n911-accent);padding-left:14px;color:#cfd4e2;font-size:14px;font-style:normal}
+.n911-about-body h3{font-size:18px;margin:26px 0 10px;color:#fff}
+.n911-about-body h3:first-child{margin-top:0}
+.n911-about-body p{color:#a9b0c2;font-size:15px;margin-bottom:12px;text-align:justify}
+.n911-about-body strong{color:#ff9a9a;font-weight:600}
+
+/* 焦点内容 */
+.n911-focus-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
+.n911-focus-main{border-radius:var(--n911-radius);overflow:hidden;border:1px solid var(--n911-line);position:relative;background:var(--n911-surface);transition:.25s}
+.n911-focus-main:hover{transform:translateY(-4px);border-color:#3d4356}
+.n911-focus-mini-list{display:grid;grid-template-rows:repeat(3,1fr);gap:16px}
+.n911-focus-mini{
+  display:grid;grid-template-columns:130px 1fr;gap:14px;background:var(--n911-surface);
+  border:1px solid var(--n911-line);border-radius:12px;overflow:hidden;transition:.22s;
+}
+.n911-focus-mini:hover{border-color:#454b5e;transform:translateX(4px)}
+.n911-focus-mini .n911-thumb{overflow:hidden}
+.n911-focus-mini .n911-thumb svg{height:100%;width:100%;object-fit:cover}
+.n911-focus-mini-body{padding:12px 14px 12px 0;display:flex;flex-direction:column;justify-content:center;gap:5px}
+.n911-focus-mini h4{font-size:14.5px;line-height:1.45}
+.n911-focus-mini small{color:var(--n911-muted);font-size:12px}
+.n911-focus-main-body{padding:20px 22px 22px}
+.n911-focus-main-body h3{font-size:20px;margin:10px 0 8px;line-height:1.4}
+.n911-focus-main-body p{color:#a9b0c2;font-size:14px;margin-bottom:14px}
+.n911-tag{
+  display:inline-block;font-size:11.5px;color:#ffb3b3;background:var(--n911-accent-soft);
+  border:1px solid rgba(255,59,59,.3);padding:2px 9px;border-radius:999px;margin-right:6px;
+}
+.n911-tag-blue{color:#a9c6ff;background:rgba(77,141,255,.12);border-color:rgba(77,141,255,.32)}
+.n911-tag-gold{color:#ffdb9b;background:rgba(255,194,77,.12);border-color:rgba(255,194,77,.32)}
+.n911-meta-row{display:flex;align-items:center;gap:14px;color:var(--n911-muted);font-size:12.5px;flex-wrap:wrap}
+.n911-actions{display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap}
+.n911-act{
+  display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#b9bfd0;
+  background:var(--n911-surface-2);border:1px solid var(--n911-line);padding:6px 13px;border-radius:999px;transition:.2s;
+}
+.n911-act:hover{border-color:#4a5064;color:#fff}
+.n911-act.n911-liked{color:var(--n911-accent);border-color:rgba(255,59,59,.5);background:var(--n911-accent-soft)}
+.n911-act.n911-saved{color:var(--n911-gold);border-color:rgba(255,194,77,.5);background:rgba(255,194,77,.1)}
+
+/* 视频流 */
+.n911-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.n911-card{
+  background:var(--n911-surface);border:1px solid var(--n911-line);border-radius:var(--n911-radius);
+  overflow:hidden;transition:.25s;display:flex;flex-direction:column;
+}
+.n911-card:hover{transform:translateY(-5px);border-color:#3f4557;box-shadow:0 22px 44px -26px rgba(0,0,0,.95)}
+.n911-card-cover{position:relative;overflow:hidden}
+.n911-card-cover svg{width:100%;height:auto;display:block;transition:.4s}
+.n911-card:hover .n911-card-cover svg{transform:scale(1.04)}
+.n911-card-play{
+  position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.5));
+  opacity:0;transition:.25s;
+}
+.n911-card:hover .n911-card-play{opacity:1}
+.n911-play-btn{
+  width:52px;height:52px;border-radius:50%;background:rgba(255,59,59,.9);display:grid;place-items:center;
+  box-shadow:0 8px 26px -6px rgba(255,59,59,.8);
+}
+.n911-play-btn::after{content:"";width:0;height:0;border-left:15px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+.n911-cover-tag{position:absolute;top:10px;left:10px;font-size:11px;padding:2px 9px;border-radius:5px;background:rgba(0,0,0,.6);color:#fff;backdrop-filter:blur(6px)}
+.n911-cover-dur{position:absolute;bottom:10px;right:10px;font-size:11px;padding:1px 7px;border-radius:4px;background:rgba(0,0,0,.7);color:#e8ebf4}
+.n911-card-body{padding:16px 17px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
+.n911-card-body h3{font-size:15.5px;line-height:1.5}
+.n911-card-body p{color:var(--n911-muted);font-size:13px;line-height:1.6;flex:1}
+.n911-card-author{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#b9bfd0}
+.n911-avatar{
+  width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:700;color:#fff;flex:0 0 auto;
+}
+.n911-data-row{display:flex;gap:14px;color:#7d8498;font-size:12px;border-top:1px dashed var(--n911-line);padding-top:10px}
+
+/* 创作者 */
+.n911-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.n911-creator{
+  background:linear-gradient(175deg,var(--n911-surface-2),var(--n911-surface));
+  border:1px solid var(--n911-line);border-radius:var(--n911-radius);padding:22px 20px;cursor:pointer;transition:.24s;
+  text-align:center;
+}
+.n911-creator:hover{border-color:#4a5064;transform:translateY(-4px)}
+.n911-creator-avatar{width:64px;height:64px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;font-size:22px;font-weight:800;color:#fff}
+.n911-creator h3{font-size:16px;margin-bottom:4px}
+.n911-creator .n911-field{font-size:12.5px;color:var(--n911-accent);font-weight:600;margin-bottom:10px;letter-spacing:.03em}
+.n911-creator p{font-size:12.5px;color:var(--n911-muted);line-height:1.6;min-height:60px;text-align:left}
+.n911-creator-stats{display:flex;justify-content:space-around;border-top:1px solid var(--n911-line);margin-top:12px;padding-top:12px;font-size:12px;color:#9aa1b4}
+.n911-creator-stats b{display:block;color:#fff;font-size:14.5px}
+
+/* 专题 */
+.n911-topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.n911-topic{
+  border:1px solid var(--n911-line);border-radius:var(--n911-radius);overflow:hidden;background:var(--n911-surface);
+  display:grid;grid-template-columns:150px 1fr;transition:.24s;
+}
+.n911-topic:hover{border-color:#4a5064}
+.n911-topic-cover svg{width:100%;height:100%;display:block}
+.n911-topic-body{padding:18px 18px 18px 0;display:flex;flex-direction:column;gap:7px;justify-content:center}
+.n911-topic-body h3{font-size:16px}
+.n911-topic-body p{font-size:13px;color:var(--n911-muted)}
+.n911-topic-status{font-size:12px;color:#3ddc84;font-weight:600;letter-spacing:.03em}
+.n911-topic-status.n911-wait{color:var(--n911-gold)}
+
+/* 灵感工具 */
+.n911-idea-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.n911-idea{
+  background:var(--n911-surface-2);border:1px solid var(--n911-line);border-radius:14px;padding:22px;transition:.22s;
+}
+.n911-idea:hover{border-color:rgba(255,59,59,.45)}
+.n911-idea-icon{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--n911-accent-soft);color:var(--n911-accent);font-size:18px;font-weight:800;margin-bottom:14px}
+.n911-idea h3{font-size:16px;margin-bottom:8px}
+.n911-idea p{font-size:13.5px;color:var(--n911-muted)}
+.n911-idea ul{margin-top:12px;display:flex;flex-direction:column;gap:7px}
+.n911-idea li{font-size:13px;color:#c3c8d6;padding-left:14px;position:relative}
+.n911-idea li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--n911-accent)}
+
+/* 评价 */
+.n911-review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.n911-review{
+  background:var(--n911-surface);border:1px solid var(--n911-line);border-radius:14px;padding:20px 22px;transition:.22s;
+}
+.n911-review:hover{border-color:#454b5e}
+.n911-review-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.n911-review-head b{font-size:14px}
+.n911-review-head small{color:var(--n911-muted);font-size:12px}
+.n911-stars{color:var(--n911-gold);font-size:12.5px;letter-spacing:2px;margin-left:auto}
+.n911-review p{font-size:13.5px;color:#b9bfd0;line-height:1.7}
+
+/* 动态 & 合作 */
+.n911-log-partner{display:grid;grid-template-columns:1.1fr .9fr;gap:44px}
+.n911-log-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px dashed var(--n911-line)}
+.n911-log-item:last-child{border-bottom:none}
+.n911-log-date{font-size:12.5px;color:var(--n911-accent);font-weight:700;flex:0 0 76px;letter-spacing:.03em;padding-top:2px}
+.n911-log-item h3{font-size:15px;margin-bottom:4px}
+.n911-log-item p{font-size:13px;color:var(--n911-muted)}
+.n911-partner-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.n911-partner{
+  background:var(--n911-surface-2);border:1px solid var(--n911-line);border-radius:10px;
+  padding:16px 14px;text-align:center;font-size:13.5px;font-weight:600;color:#c3c8d6;transition:.22s;letter-spacing:.04em;
+}
+.n911-partner:hover{color:#fff;border-color:#4a5064}
+
+/* FAQ */
+.n911-faq{max-width:900px;margin:0 auto}
+.n911-faq details{
+  background:var(--n911-surface);border:1px solid var(--n911-line);border-radius:12px;margin-bottom:12px;overflow:hidden;
+}
+.n911-faq details[open]{border-color:rgba(255,59,59,.4)}
+.n911-faq summary{
+  list-style:none;cursor:pointer;padding:17px 20px;font-size:15px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.n911-faq summary::-webkit-details-marker{display:none}
+.n911-faq summary::after{content:"+";font-size:20px;color:var(--n911-accent);font-weight:400;transition:.2s;line-height:1}
+.n911-faq details[open] summary::after{transform:rotate(45deg)}
+.n911-faq p{padding:0 20px 18px;color:var(--n911-muted);font-size:14px;line-height:1.75}
+
+/* 联系 */
+.n911-contact{
+  background:linear-gradient(135deg,#1c1f2a,#25161a 90%);
+  border:1px solid var(--n911-line);border-radius:22px;padding:44px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;
+}
+.n911-contact h2{margin-bottom:12px}
+.n911-contact p{color:var(--n911-muted);font-size:14.5px;margin-bottom:22px}
+.n911-contact-list{display:flex;flex-direction:column;gap:10px;font-size:14px;color:#c3c8d6}
+.n911-contact-list span{color:var(--n911-accent);font-weight:600;display:inline-block;width:74px}
+.n911-contact-form{display:flex;flex-direction:column;gap:12px}
+.n911-contact-form input,.n911-contact-form textarea{
+  background:rgba(0,0,0,.35);border:1px solid var(--n911-line);border-radius:10px;padding:12px 14px;color:#fff;
+  font-family:inherit;font-size:14px;outline:none;resize:vertical;transition:.2s;
+}
+.n911-contact-form input:focus,.n911-contact-form textarea:focus{border-color:var(--n911-accent)}
+
+/* 页脚 */
+.n911-footer{background:#0a0b0f;border-top:1px solid var(--n911-line);padding:52px 0 26px}
+.n911-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px}
+.n911-footer-brand p{color:var(--n911-muted);font-size:13.5px;margin-top:14px;max-width:320px}
+.n911-footer h4{font-size:14px;margin-bottom:14px;letter-spacing:.05em}
+.n911-footer ul{display:flex;flex-direction:column;gap:9px}
+.n911-footer ul a{font-size:13.5px;color:var(--n911-muted);transition:.2s}
+.n911-footer ul a:hover{color:#fff}
+.n911-footer-bottom{border-top:1px solid var(--n911-line);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:#6c7285;font-size:12.5px}
+
+/* 弹窗 & Toast */
+.n911-modal-mask{
+  position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);z-index:200;
+  display:none;align-items:center;justify-content:center;padding:20px;
+}
+.n911-modal-mask.n911-show{display:flex}
+.n911-modal{
+  background:var(--n911-surface);border:1px solid #3a4054;border-radius:18px;max-width:460px;width:100%;
+  padding:30px;position:relative;animation:n911-in .25s ease;
+}
+@keyframes n911-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.n911-modal h3{font-size:19px;margin-bottom:10px}
+.n911-modal p{color:var(--n911-muted);font-size:14px;margin-bottom:18px;line-height:1.7}
+.n911-modal-close{
+  position:absolute;top:14px;right:16px;font-size:22px;color:#7d8498;line-height:1;transition:.2s;
+}
+.n911-modal-close:hover{color:#fff}
+.n911-modal .n911-share-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:6px}
+.n911-modal .n911-share-row button{
+  padding:14px 6px;border-radius:10px;background:var(--n911-surface-2);border:1px solid var(--n911-line);
+  font-size:12.5px;color:#c3c8d6;transition:.2s;
+}
+.n911-modal .n911-share-row button:hover{border-color:var(--n911-accent);color:#fff}
+.n911-toast{
+  position:fixed;bottom:34px;left:50%;transform:translate(-50%,20px);background:#1f2230;color:#fff;
+  border:1px solid #454b5e;padding:11px 22px;border-radius:999px;font-size:13.5px;z-index:300;
+  opacity:0;pointer-events:none;transition:.3s;box-shadow:0 16px 40px -12px rgba(0,0,0,.9);
+}
+.n911-toast.n911-show{opacity:1;transform:translate(-50%,0)}
+
+/* 回到顶部 */
+.n911-backtop{
+  position:fixed;right:24px;bottom:24px;width:46px;height:46px;border-radius:50%;background:var(--n911-accent);
+  color:#fff;font-size:20px;display:grid;place-items:center;z-index:90;box-shadow:0 10px 26px -8px rgba(255,59,59,.8);
+  opacity:0;pointer-events:none;transition:.3s;transform:translateY(14px);
+}
+.n911-backtop.n911-show{opacity:1;pointer-events:auto;transform:translateY(0)}
+
+.n911-empty{color:var(--n911-muted);font-size:14px;padding:24px;border:1px dashed var(--n911-line);border-radius:12px;display:none;text-align:center}
+.n911-empty.n911-show{display:block}
+.n911-hidden{display:none !important}
+
+/* 响应式 */
+@media(max-width:1020px){
+  .n911-hero-grid{grid-template-columns:1fr;gap:38px}
+  .n911-focus-grid{grid-template-columns:1fr}
+  .n911-video-grid{grid-template-columns:repeat(2,1fr)}
+  .n911-creator-grid{grid-template-columns:repeat(2,1fr)}
+  .n911-about-grid{grid-template-columns:1fr}
+  .n911-log-partner{grid-template-columns:1fr;gap:34px}
+  .n911-contact{grid-template-columns:1fr}
+  .n911-footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .n911-nav,.n911-header .n911-search{display:none}
+  .n911-hamburger{display:flex}
+  .n911-header .n911-wrap{height:60px}
+  .n911-hero{padding:48px 0 40px}
+  .n911-hero-stats{grid-template-columns:repeat(3,1fr);gap:8px}
+  .n911-hero-stats strong{font-size:20px}
+  .n911-video-grid{grid-template-columns:1fr}
+  .n911-creator-grid{grid-template-columns:1fr 1fr}
+  .n911-topic-grid{grid-template-columns:1fr}
+  .n911-idea-grid{grid-template-columns:1fr}
+  .n911-review-grid{grid-template-columns:1fr}
+  .n911-contact{padding:28px 22px}
+  .n911-section{padding:46px 0}
+  .n911-hero-float{left:0}
+  .n911-footer-grid{grid-template-columns:1fr}
+  .n911-focus-mini{grid-template-columns:110px 1fr}
+  .n911-notice-track span:nth-child(n+2){display:none}
+}
+@media(max-width:480px){
+  .n911-creator-grid{grid-template-columns:1fr}
+  .n911-topic{grid-template-columns:110px 1fr}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶容器：公告条 + 页头 -->
+<div class="n911-sticky-top">
+  <div class="n911-notice" id="n911-notice">
+    <div class="n911-wrap">
+      <span class="n911-notice-tag">最新爆料</span>
+      <div class="n911-notice-track">
+        <span>11月19日更新：<b>大赛第三轮现场实录</b>独家影像上线</span>
+        <span>新增专题：<b>「爆料背后」</b>8位创作者联合企划开启报名</span>
+        <span>官方发布：<b>赛事高光集锦</b>第 12 期已入库</span>
+        <span>社区挑战：<b>#我在大赛现场</b> 投稿通道开放中</span>
+      </div>
+    </div>
+  </div>
+  <header class="n911-header">
+    <div class="n911-wrap">
+      <a href="#n911-top" class="n911-logo" aria-label="911大赛爆料 官方网站">
+        <span class="n911-logo-mark">911</span>
+        <span>大赛爆料
+          <span class="n911-logo-sub">OFFICIAL SITE</span>
+        </span>
+      </a>
+      <nav class="n911-nav" aria-label="主导航">
+        <a href="#n911-top">首页</a>
+        <a href="#n911-focus">焦点爆料</a>
+        <a href="#n911-videos">热门内容</a>
+        <a href="#n911-topics">专题企划</a>
+        <a href="#n911-creators">创作者</a>
+        <a href="#n911-logs">品牌动态</a>
+        <a href="#n911-faq">帮助</a>
+        <a href="#n911-contact">联系</a>
+      </nav>
+      <div class="n911-header-tools">
+        <div class="n911-search">
+          <input type="search" id="n911-search-input" placeholder="搜索爆料 / 创作者 / 专题" aria-label="站内搜索">
+          <button type="button" id="n911-search-btn">搜索</button>
+        </div>
+        <button class="n911-hamburger" id="n911-hamburger" aria-label="展开导航" aria-expanded="false">
+          <i></i><i></i><i></i>
+        </button>
+      </div>
+    </div>
+    <div class="n911-mobile-nav" id="n911-mobile-nav">
+      <ul>
+        <li><a href="#n911-top">首页</a></li>
+        <li><a href="#n911-focus">焦点爆料</a></li>
+        <li><a href="#n911-videos">热门内容</a></li>
+        <li><a href="#n911-topics">专题企划</a></li>
+        <li><a href="#n911-creators">创作者</a></li>
+        <li><a href="#n911-logs">品牌动态</a></li>
+        <li><a href="#n911-ideas">创作灵感</a></li>
+        <li><a href="#n911-faq">帮助</a></li>
+        <li><a href="#n911-contact">联系投稿</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+
+<main id="n911-top">
+
+  <!-- 首屏 -->
+  <section class="n911-hero">
+    <div class="n911-wrap n911-hero-grid">
+      <div>
+        <span class="n911-hero-badge">911大赛爆料 · 品牌官方网站</span>
+        <h1>911大赛<span class="n911-accent">爆料</span></h1>
+        <p class="n911-hero-lead">一个聚焦赛事现场、幕后故事与创作者表达的影像社区。我们以原创、高清、正版为底线，把每一次爆料做成值得回看的内容，让真实的声音被看见、被记录、被传递。</p>
+        <div class="n911-hero-actions">
+          <a class="n911-btn n911-btn-primary" href="#n911-videos">浏览热门爆料</a>
+          <a class="n911-btn n911-btn-ghost" href="#n911-contact">投稿与爆料入口</a>
+          <button class="n911-btn n911-btn-ghost" type="button" id="n911-share-hero">分享本站</button>
+        </div>
+        <div class="n911-hero-stats">
+          <div><strong>2,860+</strong><span>爆料条目累计</span></div>
+          <div><strong>137 位</strong><span>认证创作者</span></div>
+          <div><strong>98.6%</strong><span>内容口碑好评</span></div>
+        </div>
+      </div>
+      <div class="n911-hero-visual">
+        <div class="n911-hero-cover">
+          <svg viewBox="0 0 640 360" role="img" aria-label="911大赛爆料主视觉：夜场赛台与聚光灯下的爆料画面">
+            <defs>
+              <linearGradient id="n911HeroBg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#221019"/>
+                <stop offset=".55" stop-color="#131322"/>
+                <stop offset="1" stop-color="#0e0f14"/>
+              </linearGradient>
+              <radialGradient id="n911HeroGlow" cx=".7" cy=".18" r=".75">
+                <stop offset="0" stop-color="#ff3b3b" stop-opacity=".55"/>
+                <stop offset="1" stop-color="#ff3b3b" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="n911HeroStage" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#39303f"/>
+                <stop offset="1" stop-color="#171821"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="360" fill="url(#n911HeroBg)"/>
+            <rect width="640" height="360" fill="url(#n911HeroGlow)"/>
+            <g opacity=".28" stroke="#4d8dff" stroke-width="1">
+              <path d="M0 300 H640 M0 260 H640 M0 220 H640"/>
+              <path d="M80 360 L300 190 M560 360 L340 190"/>
+            </g>
+            <path d="M120 300 L520 300 L470 250 L170 250 Z" fill="url(#n911HeroStage)"/>
+            <ellipse cx="320" cy="252" rx="150" ry="26" fill="#ff3b3b" opacity=".18"/>
+            <circle cx="320" cy="150" r="52" fill="#1b1c28" stroke="#ff3b3b" stroke-width="3"/>
+            <path d="M304 128 L304 172 L344 150 Z" fill="#ff3b3b"/>
+            <g stroke="#ffc24d" stroke-width="3" opacity=".85">
+              <path d="M214 96 L232 122 M426 96 L408 122"/>
+            </g>
+            <g fill="#ffc24d" opacity=".9">
+              <circle cx="210" cy="90" r="5"/><circle cx="430" cy="90" r="5"/>
+            </g>
+            <g fill="#4d8dff" opacity=".5">
+              <rect x="36" y="44" width="58" height="5" rx="2.5"/>
+              <rect x="36" y="58" width="34" height="5" rx="2.5"/>
+              <rect x="546" y="300" width="58" height="5" rx="2.5"/>
+              <rect x="566" y="314" width="38" height="5" rx="2.5"/>
+            </g>
+            <text x="36" y="330" fill="#eceef5" font-size="15" font-family="sans-serif" font-weight="700" opacity=".9">#911 现场爆料</text>
+          </svg>
+        </div>
+        <div class="n911-hero-float">
+          <span class="n911-dot"></span>
+          <div><b>第 12 期爆料合辑</b><small>今日 09:40 官方发布</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关键词定位与深度解析 -->
+  <section class="n911-section" id="n911-about">
+    <div class="n911-wrap">
+      <div class="n911-section-head">
+        <div>
+          <span class="n911-eyebrow">About The Topic</span>
+          <h2 class="n911-h2">关于「911大赛爆料」的定位与解析</h2>
+          <p class="n911-sub">一个由企业持续运营的影像社区，如何围绕赛事事件构建可信、可查、可参与的内容生态。</p>
+        </div>
+      </div>
+      <div class="n911-about-grid">
+        <aside class="n911-about-lead">
+          <h3>品牌一句话</h3>
+          <p>我们不是围观者，而是把围观整理成记录的人。911大赛爆料官方网站以「现场、幕后、复盘」三条内容线，为赛事参与者与影像爱好者提供高品质内容。</p>
+          <p class="n911-quote">坚持原创与正版，坚持可核验的信息来源，坚持把创作者放在内容生态的中心。</p>
+        </aside>
+        <div class="n911-about-body">
+          <h3>一、关键词的语义边界</h3>
+          <p>「911大赛爆料」由三个部分组成：赛事代号「911」、事件属性「大赛」、内容属性「爆料」。它天然带有新闻性与话题性，但作为一家视频品牌的官方网站，我们更在意的是把爆料做成可追溯的<b>内容资产</b>：每一条爆料都有来源、有时间、有创作者、有后续跟进。我们围绕这一关键词搭建的不是八卦橱窗，而是一个结构化的赛事影像档案库，让用户搜索任何一条爆料时，都能找到上下文而不是碎片。</p>
+          <p>因此，页面中的每一档内容都遵循「三段式」：现场发生了什么、幕后为什么发生、复盘后能带走什么。这种结构既保留了爆料的鲜活感，也避免了信息损耗，让内容具备长期价值。对于企业客户与合作伙伴而言，这意味着一个可持续复用、可被检索的内容生态，而不是一次性的流量消耗。</p>
+          <h3>二、为什么需要一个专门的内容社区</h3>
+          <p>赛事类信息天然分散：有人在现场，有人在后台，有人在评论区。分散带来视角，也带来噪音。<strong>911大赛爆料</strong>的社区定位，就是把分散视角收拢进统一的创作规范：投稿者需要提供时间、地点、事件三要素；短视频与长视频分轨呈现；评论区与内容区分离，避免情绪淹没事实。我们相信，爆料的价值不在于「快一秒」，而在于「准一层」。</p>
+          <p>在内容生态上，我们采用「官方发布 + 认证创作者 + 社区投稿」三层供给。官方发布负责权威口径与精品内容，认证创作者负责深度跟进与人物访谈，社区投稿负责广覆盖的现场记录。三层之间通过专题企划串联，形成稳定的更新节奏，也让每个层级的创作者都能被看见。</p>
+          <h3>三、品牌与企业的长期主义</h3>
+          <p>作为深耕赛事影像垂直领域的品牌，我们始终把用户至上写进产品逻辑：不做诱导点击的标题，不搬运未经授权的内容，不用算法制造对立。平台提供高清、正版的放映体验，提供创作者分成与版权登记协助，也提供面向企业客户的合作栏目。我们希望「911大赛爆料」这六个字，最终代表的是值得信赖——值得信赖的现场，值得信赖的表达，值得信赖的社区氛围。</p>
+          <p>在技术层面，我们持续投入内容标签体系与检索能力，让一条半年前的爆料依然能被精准找到；在运营层面，我们保留人工审核与编辑推荐，让品质与口碑不被短期数据绑架。这些看起来「慢」的选择，构成了品牌故事的底色，也让内容生态具备真正的成长性。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点爆料 -->
+  <section class="n911-section" id="n911-focus">
+    <div class="n911-wrap">
+      <div class="n911-section-head">
+        <div>
+          <span class="n911-eyebrow">Focus</span>
+          <h2 class="n911-h2">焦点爆料 · 本期重点</h2>
+          <p class="n911-sub">编辑推荐的四条内容，覆盖现场、幕后、复盘与人物，每条均标注来源与更新时间。</p>
+        </div>
+      </div>
+      <div class="n911-focus-grid">
+        <article class="n911-focus-main">
+          <div class="n911-card-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="焦点爆料封面：第三轮赛台全景与观众席灯光">
+              <defs>
+                <linearGradient id="n911F1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#101a2e"/><stop offset="1" stop-color="#2a1020"/>
+                </linearGradient>
+                <radialGradient id="n911F1g" cx=".5" cy=".12" r=".8">
+                  <stop offset="0" stop-color="#4d8dff" stop-opacity=".6"/><stop offset="1" stop-color="#4d8dff" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <rect width="640" height="360" fill="url(#n911F1)"/>
+              <rect width="640" height="360" fill="url(#n911F1g)"/>
+              <g fill="#0b0d14" opacity=".85">
+                <rect x="0" y="250" width="640" height="110"/>
+              </g>
+              <g fill="#38415c">
+                <circle cx="90" cy="290" r="16"/><circle cx="150" cy="286" r="14"/><circle cx="212" cy="292" r="17"/>
+                <circle cx="430" cy="290" r="16"/><circle cx="492" cy="286" r="14"/><circle cx="554" cy="292" r="17"/>
+              </g>
+              <rect x="250" y="196" width="140" height="60" rx="8" fill="#1d2233" stroke="#4d8dff" stroke-width="2"/>
+              <text x="320" y="234" text-anchor="middle" fill="#a9c6ff" font-size="20" font-family="sans-serif" font-weight="700">ROUND 3</text>
+              <g stroke="#ff3b3b" stroke-width="2" opacity=".8">
+                <path d="M320 40 L320 150"/><path d="M270 62 L320 150"/><path d="M370 62 L320 150"/>
+              </g>
+              <circle cx="320" cy="34" r="8" fill="#ff3b3b"/>
+            </svg>
+            <div class="n911-card-play"><span class="n911-play-btn"></span></div>
+            <span class="n911-cover-tag">现场实录</span>
+            <span class="n911-cover-dur">18:42</span>
+          </div>
+          <div class="n911-focus-main-body">
+            <span class="n911-tag">独家</span><span class="n911-tag n911-tag-blue">高清</span><span class="n911-tag n911-tag-gold">官方发布</span>
+            <h3>第三轮现场实录：赛台置景更换与计时系统调整全记录</h3>
+            <p>11月18日晚间，911大赛第三轮赛台完成置景更换，计时系统同步升级。本片以四个机位记录从下午四点布场到凌晨一点决算的完整过程，并附工作人员口述。</p>
+            <div class="n911-meta-row">
+              <span>策划：赛事影像组</span><span>2026-11-19 09:40</span><span>播放 48.2 万</span>
+            </div>
+            <div class="n911-actions">
+              <button class="n911-act" type="button" data-n911-like><span>♡</span> 点赞 <b>0</b></button>
+              <button class="n911-act" type="button" data-n911-save><span>☆</span> 收藏</button>
+              <button class="n911-act" type="button" data-n911-comment>💬 评论</button>
+              <button class="n911-act" type="button" data-n911-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+        <div class="n911-focus-mini-list">
+          <article class="n911-focus-mini">
+            <div class="n911-thumb">
+              <svg viewBox="0 0 260 160" role="img" aria-label="焦点小图：后台通道里工作人员对讲通话的剪影">
+                <rect width="260" height="160" fill="#151b26"/>
+                <path d="M0 160 L260 160 L260 120 L170 90 L90 96 L0 130 Z" fill="#1f2735"/>
+                <circle cx="120" cy="66" r="22" fill="#38445c"/>
+                <path d="M96 118 Q120 92 144 118 L150 138 H90 Z" fill="#39465f"/>
+                <path d="M30 40 H80 M30 52 H64" stroke="#4d8dff" stroke-width="4" opacity=".7"/>
+                <rect x="160" y="34" width="64" height="42" rx="6" fill="#2a1a20" stroke="#ff3b3b" stroke-width="1.5"/>
+                <path d="M176 55 H208 M176 64 H198" stroke="#ff8a8a" stroke-width="3"/>
+              </svg>
+            </div>
+            <div class="n911-focus-mini-body">
+              <h4>后台三小时：爆料线索是怎么被核实的</h4>
+              <small>幕后 · 12:06 · 播放 21.7 万</small>
+            </div>
+          </article>
+          <article class="n911-focus-mini">
+            <div class="n911-thumb">
+              <svg viewBox="0 0 260 160" role="img" aria-label="焦点小图：数据复盘画面中的曲线与柱状图">
+                <rect width="260" height="160" fill="#101722"/>
+                <g stroke="#28384f" stroke-width="1">
+                  <path d="M24 128 H236 M24 96 H236 M24 64 H236 M24 32 H236"/>
+                </g>
+                <path d="M24 112 L64 92 L104 100 L144 62 L184 74 L236 38" fill="none" stroke="#ff3b3b" stroke-width="3"/>
+                <g fill="#4d8dff" opacity=".85">
+                  <rect x="44" y="104" width="16" height="24"/><rect x="104" y="88" width="16" height="40"/>
+                  <rect x="164" y="70" width="16" height="58"/>
+                </g>
+                <circle cx="236" cy="38" r="5" fill="#ffc24d"/>
+              </svg>
+            </div>
+            <div class="n911-focus-mini-body">
+              <h4>复盘：本轮爆料热度为何集中在两个话题</h4>
+              <small>行业观察 · 11:20 · 播放 16.4 万</small>
+            </div>
+          </article>
+          <article class="n911-focus-mini">
+            <div class="n911-thumb">
+              <svg viewBox="0 0 260 160" role="img" aria-label="焦点小图：创作者访谈中的麦克风与录音电平">
+                <rect width="260" height="160" fill="#1a1524"/>
+                <rect x="96" y="34" width="34" height="66" rx="17" fill="#3a3350" stroke="#8f7fbf" stroke-width="2"/>
+                <path d="M86 78 Q86 122 113 122 Q140 122 140 78" fill="none" stroke="#8f7fbf" stroke-width="3"/>
+                <path d="M113 122 V146" stroke="#8f7fbf" stroke-width="3"/>
+                <g fill="#ff3b3b" opacity=".8">
+                  <rect x="176" y="82" width="8" height="20"/><rect x="190" y="66" width="8" height="36"/>
+                  <rect x="204" y="46" width="8" height="56"/><rect x="218" y="72" width="8" height="30"/>
+                </g>
+              </svg>
+            </div>
+            <div class="n911-focus-mini-body">
+              <h4>人物访谈：拍了九年赛事的摄影师，怎么判断一个瞬间</h4>
+              <small>人物 · 10:02 · 播放 12.9 万</small>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门视频流 -->
+  <section class="n911-section" id="n911-videos">
+    <div class="n911-wrap">
+      <div class="n911-section-head">
+        <div>
+          <span class="n911-eyebrow">Trending</span>
+          <h2 class="n911-h2">热门爆料内容流</h2>
+          <p class="n911-sub">按社区热度排序的六条内容，横跨现场记录、实用技巧、深度测评与治愈影像。</p>
+        </div>
+        <div id="n911-filter-tip" style="font-size:13px;color:var(--n911-muted)">共 6 条内容</div>
+      </div>
+      <div class="n911-video-grid" id="n911-video-grid">
+
+        <article class="n911-card" data-n911-keywords="现场 置景 报道 教程">
+          <div class="n911-card-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：赛台俯拍视角下的置景与道具摆放">
+              <defs><linearGradient id="n911V1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#141c2b"/><stop offset="1" stop-color="#0c0f16"/></linearGradient></defs>
+              <rect width="640" height="360" fill="url(#n911V1)"/>
+              <g stroke="#2f3a4f" stroke-width="1" opacity=".8">
+                <path d="M0 240 L640 120 M0 300 L640 200 M0 180 L640 60"/>
+                <path d="M120 360 L240 0 M320 360 L400 0 M520 360 L560 0"/>
+              </g>
+              <rect x="180" y="150" width="120" height="80" rx="6" fill="#22304a" stroke="#4d8dff" stroke-width="2"/>
+              <rect x="330" y="120" width="90" height="110" rx="6" fill="#2b2233" stroke="#ff3b3b" stroke-width="2"/>
+              <circle cx="240" cy="112" r="12" fill="#ffc24d" opacity=".9"/>
+              <path d="M60 320 H580" stroke="#ff3b3b" stroke-width="2" stroke-dasharray="10 8" opacity=".6"/>
+            </svg>
+            <div class="n911-card-play"><span class="n911-play-btn"></span></div>
+            <span class="n911-cover-tag">现场记录</span>
+            <span class="n911-cover-dur">09:18</span>
+          </div>
+          <div class="n911-card-body">
+            <h3>从布场图到现场：一张置景图纸怎样变成赛台</h3>
+            <p>跟着美术组走一遍流程，看清爆料里最容易忽略的细节。</p>
+            <div class="n911-card-author">
+              <span class="n911-avatar" style="background:#4d8dff">黎</span> 黎岸影像
+              <span style="margin-left:auto">认证创作者</span>
+            </div>
+            <div class="n911-data-row"><span>播 32.1 万</span><span>赞 1.8 万</span><span>藏 6,204</span></div>
+            <div class="n911-actions">
+              <button class="n911-act" type="button" data-n911-like><span>♡</span> 点赞 <b>0</b></button>
+              <button class="n911-act" type="button" data-n911-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="n911-card" data-n911-keywords="教程 技巧 爆料 剪辑">
+          <div class="n911-card-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：剪辑时间线上的素材轨道与波形">
+              <rect width="640" height="360" fill="#101a17"/>
+              <g stroke="#1f3a31" stroke-width="1"><path d="M0 90 H640 M0 180 H640 M0 270 H640"/></g>
+              <g fill="#2c4a3f">
+                <rect x="40" y="76" width="140" height="28" rx="5"/><rect x="190" y="76" width="90" height="28" rx="5"/>
+                <rect x="40" y="166" width="80" height="28" rx="5"/><rect x="130" y="166" width="200" height="28" rx="5"/>
+                <rect x="340" y="166" width="120" height="28" rx="5"/>
+              </g>
+              <path d="M40 262 L80 240 L120 268 L160 232 L200 256 L240 226 L280 262 L320 238 L360 268 L400 236 L440 258 L480 230 L520 262 L560 240 L600 264" fill="none" stroke="#3ddc84" stroke-width="3"/>
+              <path d="M40 76 V320" stroke="#ff3b3b" stroke-width="2"/>
+              <circle cx="40" cy="76" r="6" fill="#ff3b3b"/>
+            </svg>
+            <div class="n911-card-play"><span class="n911-play-btn"></span></div>
+            <span class="n911-cover-tag">教程干货</span>
+            <span class="n911-cover-dur">14:05</span>
+          </div>
+          <div class="n911-card-body">
+            <h3>七分钟剪出一条爆料短片：节奏、证词与画面的配比</h3>
+            <p>把长素材压缩成可传播的短片，难点从来不是软件操作。</p>
+            <div class="n911-card-author">
+              <span class="n911-avatar" style="background:#3ddc84;color:#0c1210">周</span> 周末剪辑室
+              <span style="margin-left:auto">认证创作者</span>
+            </div>
+            <div class="n911-data-row"><span>播 27.6 万</span><span>赞 1.4 万</span><span>藏 8,930</span></div>
+            <div class="n911-actions">
+              <button class="n911-act" type="button" data-n911-like><span>♡</span> 点赞 <b>0</b></button>
+              <button class="n911-act" type="button" data-n911-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="n911-card" data-n911-keywords="测评 设备 现场 高清">
+          <div class="n911-card-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：三种拍摄设备在暗光环境下的对比画面">
+              <rect width="640" height="360" fill="#1a1410"/>
+              <g>
+                <rect x="40" y="90" width="160" height="180" rx="10" fill="#2b2018" stroke="#8a6a45" stroke-width="2"/>
+                <rect x="240" y="90" width="160" height="180" rx="10" fill="#2b2018" stroke="#8a6a45" stroke-width="2"/>
+                <rect x="440" y="90" width="160" height="180" rx="10" fill="#2b2018" stroke="#8a6a45" stroke-width="2"/>
+                <circle cx="120" cy="180" r="34" fill="none" stroke="#ffc24d" stroke-width="3"/>
+                <circle cx="320" cy="180" r="34" fill="none" stroke="#ffc24d" stroke-width="3"/>
+                <circle cx="520" cy="180" r="34" fill="none" stroke="#ffc24d" stroke-width="3"/>
+                <rect x="96" y="228" width="48" height="8" rx="4" fill="#ffc24d" opacity=".7"/>
+                <rect x="296" y="228" width="48" height="8" rx="4" fill="#ffc24d" opacity=".7"/>
+                <rect x="496" y="228" width="48" height="8" rx="4" fill="#ffc24d" opacity=".7"/>
+              </g>
+              <text x="40" y="330" fill="#c9a887" font-size="16" font-family="sans-serif">A / B / C 三机位暗光对比</text>
+            </svg>
+            <div class="n911-card-play"><span class="n911-play-btn"></span></div>
+            <span class="n911-cover-tag">深度测评</span>
+            <span class="n911-cover-dur">21:33</span>
+          </div>
+          <div class="n911-card-body">
+            <h3>暗光赛场的三种拍法：设备不是决定项，位置才是</h3>
+            <p>同一场赛事，三个机位、三套参数，出片差异比想象中大。</p>
+            <div class="n911-card-author">
+              <span class="n911-avatar" style="background:#ffc24d;color:#2b1f08">程</span> 程野的取景框
+              <span style="margin-left:auto">认证创作者</span>
+            </div>
+            <div class="n911-data-row"><span>播 19.8 万</span><span>赞 9,120</span><span>藏 5,417</span></div>
+            <div class="n911-actions">
+              <button class="n911-act" type="button" data-n911-like><span>♡</span> 点赞 <b>0</b></button>
+              <button class="n911-act" type="button" data-n911-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="n911-card" data-n911-keywords="人物 访谈 幕后 故事">
+          <div class="n911-card-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：访谈场景中的双人对坐与窗外光线">
+              <defs><linearGradient id="n911V4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d1a2c"/><stop offset="1" stop-color="#2c1c24"/></linearGradient></defs>
+              <rect width="640" height="360" fill="url(#n911V4)"/>
+              <rect x="60" y="50" width="150" height="200" fill="#3a3350" opacity=".55"/>
+              <path d="M60 250 H210" stroke="#8f7fbf" stroke-width="3"/>
+              <circle cx="290" cy="170" r="34" fill="#4a4166"/>
+              <path d="M240 300 Q290 230 340 300 Z" fill="#4a4166"/>
+              <circle cx="450" cy="176" r="30" fill="#6b4450"/>
+              <path d="M406 300 Q450 240 494 300 Z" fill="#6b4450"/>
+              <rect x="516" y="120" width="76" height="120" rx="4" fill="none" stroke="#ff8a8a" stroke-width="2"/>
+              <path d="M528 148 H580 M528 168 H566 M528 188 H574" stroke="#ff8a8a" stroke-width="2" opacity=".7"/>
+            </svg>
+            <div class="n911-card-play"><span class="n911-play-btn"></span></div>
+            <span class="n911-cover-tag">人物访谈</span>
+            <span class="n911-cover-dur">26:47</span>
+          </div>
+          <div class="n911-card-body">
+            <h3>「我只拍看得见的东西」——与赛事记录者的两小时对谈</h3>
+            <p>关于边界、关于等待，也关于为什么有些画面宁可不用。</p>
+            <div class="n911-card-author">
+              <span class="n911-avatar" style="background:#8f7fbf">顾</span> 顾言访谈录
+              <span style="margin-left:auto">认证创作者</span>
+            </div>
+            <div class="n911-data-row"><span>播 15.3 万</span><span>赞 8,204</span><span>藏 3,916</span></div>
+            <div class="n911-actions">
+              <button class="n911-act" type="button" data-n911-like><span>♡</span> 点赞 <b>0</b></button>
+              <button class="n911-act" type="button" data-n911-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="n911-card" data-n911-keywords="治愈 城市 日常 社区">
+          <div class="n911-card-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：清晨城市街角与骑车经过的背影">
+              <defs><linearGradient id="n911V5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#20344a"/><stop offset="1" stop-color="#0f1722"/></linearGradient></defs>
+              <rect width="640" height="360" fill="url(#n911V5)"/>
+              <circle cx="500" cy="86" r="42" fill="#ffd88a" opacity=".85"/>
+              <g fill="#16202e">
+                <rect x="0" y="180" width="140" height="180"/><rect x="150" y="150" width="110" height="210"/>
+                <rect x="400" y="160" width="130" height="200"/><rect x="540" y="190" width="100" height="170"/>
+              </g>
+              <g fill="#ffd88a" opacity=".7">
+                <rect x="26" y="210" width="20" height="24"/><rect x="70" y="210" width="20" height="24"/>
+                <rect x="430" y="196" width="20" height="24"/><rect x="472" y="196" width="20" height="24"/>
+              </g>
+              <path d="M0 320 H640" stroke="#3b4d66" stroke-width="3"/>
+              <circle cx="330" cy="288" r="14" fill="none" stroke="#8fb6e0" stroke-width="3"/>
+              <circle cx="380" cy="288" r="14" fill="none" stroke="#8fb6e0" stroke-width="3"/>
+              <path d="M330 288 L356 254 L380 288 M356 254 L344 254" stroke="#8fb6e0" stroke-width="3" fill="none"/>
+            </svg>
+            <div class="n911-card-play"><span class="n911-play-btn"></span></div>
+            <span class="n911-cover-tag">治愈影像</span>
+            <span class="n911-cover-dur">07:52</span>
+          </div>
+          <div class="n911-card-body">
+            <h3>赛后的清晨：六点半的街角与第一批到场的人</h3>
+            <p>没有解说，只有环境声。把热闹之后的那一面留下来。</p>
+            <div class="n911-card-author">
+              <span class="n911-avatar" style="background:#8fb6e0;color:#101b26">南</span> 南窗慢拍
+              <span style="margin-left:auto">社区作者</span>
+            </div>
+            <div class="n911-data-row"><span>播 12.2 万</span><span>赞 7,608</span><span>藏 4,102</span></div>
+            <div class="n911-actions">
+              <button class="n911-act" type="button" data-n911-like><span>♡</span> 点赞 <b>0</b></button>
+              <button class="n911-act" type="button" data-n911-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="n911-card" data-n911-keywords="攻略 现场 报名 比赛">
+          <div class="n911-card-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：入场路线图与三个关键节点标记">
+              <rect width="640" height="360" fill="#131722"/>
+              <g stroke="#2b3446" stroke-width="2">
+                <path d="M40 300 H180 V180 H320 V80 H520 V180" fill="none"/>
+                <path d="M180 240 H460" fill="none"/>
+              </g>
+              <g>
+                <circle cx="40" cy="300" r="12" fill="#4d8dff"/>
+                <circle cx="320" cy="80" r="12" fill="#ffc24d"/>
+                <circle cx="520" cy="180" r="12" fill="#ff3b3b"/>
+              </g>
+              <text x="28" y="336" fill="#8fa6c8" font-size="15" font-family="sans-serif">入口</text>
+              <text x="286" y="56" fill="#e6cf9a" font-size="15" font-family="sans-serif">检录</text>
+              <text x="482" y="216" fill="#ff9a9a" font-size="15" font-family="sans-serif">观赛区</text>
+              <g stroke="#3b4457" stroke-width="1" opacity=".6">
+                <path d="M0 60 H640 M0 140 H640 M0 220 H640"/>
+              </g>
+            </svg>
+            <div class="n911-card-play"><span class="n911-play-btn"></span></div>
+            <span class="n911-cover-tag">实用攻略</span>
+            <span class="n911-cover-dur">11:26</span>
+          </div>
+          <div class="n911-card-body">
+            <h3>第一次到场怎么拍？一份写给出片新手的现场路线图</h3>
+            <p>从入场检录到观赛区机位，先把路线走对，再谈参数。</p>
+            <div class="n911-card-author">
+              <span class="n911-avatar" style="background:#ff3b3b">阿</span> 阿森在现场
+              <span style="margin-left:auto">认证创作者</span>
+            </div>
+            <div class="n911-data-row"><span>播 22.7 万</span><span>赞 1.1 万</span><span>藏 9,318</span></div>
+            <div class="n911-actions">
+              <button class="n911-act" type="button" data-n911-like><span>♡</span> 点赞 <b>0</b></button>
+              <button class="n911-act" type="button" data-n911-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <div class="n911-empty" id="n911-video-empty">没有找到匹配的内容，换个关键词试试，例如「现场」「教程」「人物」。</div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="n911-section" id="n911-topics">
+    <div class="n911-wrap">
+      <div class="n911-section-head">
+        <div>
+          <span class="n911-eyebrow">Series</span>
+          <h2 class="n911-h2">专题企划 · 持续更新中</h2>
+          <p class="n911-sub">四个正在进行的长线企划，围绕爆料现场延展出不同叙事角度。</p>
+        </div>
+      </div>
+      <div class="n911-topic-grid">
+        <article class="n911-topic">
+          <div class="n911-topic-cover">
+            <svg viewBox="0 0 260 260" role="img" aria-label="专题封面：爆料背后系列的红色档案袋图形">
+              <rect width="260" height="260" fill="#1c1116"/>
+              <rect x="46" y="72" width="168" height="120" rx="8" fill="#2e1418" stroke="#ff3b3b" stroke-width="2"/>
+              <path d="M46 104 H214" stroke="#ff3b3b" stroke-width="2"/>
+              <path d="M112 72 L132 54 L152 72" fill="none" stroke="#ffc24d" stroke-width="3"/>
+              <path d="M76 132 H184 M76 152 H156" stroke="#ff8a8a" stroke-width="4"/>
+            </svg>
+          </div>
+          <div class="n911-topic-body">
+            <h3>「爆料背后」联合企划</h3>
+            <p>八位创作者走入后台，追踪一条爆料从线索到成片的全过程。</p>
+            <span class="n911-topic-status">更新至第 6 集 · 报名中</span>
+          </div>
+        </article>
+        <article class="n911-topic">
+          <div class="n911-topic-cover">
+            <svg viewBox="0 0 260 260" role="img" aria-label="专题封面：复盘笔记系列的深蓝书页与标注">
+              <rect width="260" height="260" fill="#101a2a"/>
+              <rect x="60" y="50" width="140" height="170" rx="6" fill="#182a44" stroke="#4d8dff" stroke-width="2"/>
+              <path d="M84 92 H176 M84 118 H160 M84 144 H170 M84 170 H146" stroke="#8fbcf5" stroke-width="3"/>
+              <circle cx="190" cy="196" r="16" fill="#ffc24d"/>
+              <path d="M182 196 L188 202 L199 190" stroke="#231a05" stroke-width="3" fill="none"/>
+            </svg>
+          </div>
+          <div class="n911-topic-body">
+            <h3>「爆料复盘笔记」</h3>
+            <p>每周一次的数据与口碑复盘，拆解哪些内容真正被记住。</p>
+            <span class="n911-topic-status">更新至第 12 期</span>
+          </div>
+        </article>
+        <article class="n911-topic">
+          <div class="n911-topic-cover">
+            <svg viewBox="0 0 260 260" role="img" aria-label="专题封面：城市现场系列的路灯与街道剪影">
+              <rect width="260" height="260" fill="#151d21"/>
+              <path d="M0 200 H260" stroke="#2f4a44" stroke-width="3"/>
+              <path d="M70 200 V90 M70 90 H110" stroke="#7fbfa8" stroke-width="4" fill="none"/>
+              <circle cx="114" cy="90" r="10" fill="#ffd88a"/>
+              <g fill="#22343a"><rect x="150" y="120" width="60" height="80"/><rect x="214" y="150" width="40" height="50"/></g>
+              <g fill="#ffd88a" opacity=".6"><rect x="164" y="136" width="12" height="14"/><rect x="184" y="136" width="12" height="14"/></g>
+            </svg>
+          </div>
+          <div class="n911-topic-body">
+            <h3>「城市与赛场」影像志</h3>
+            <p>把镜头从赛台挪开三公里，看看赛事如何改变一座城市的清晨。</p>
+            <span class="n911-topic-status">更新至第 4 集 · 征稿中</span>
+          </div>
+        </article>
+        <article class="n911-topic">
+          <div class="n911-topic-cover">
+            <svg viewBox="0 0 260 260" role="img" aria-label="专题封面：新人榜系列的阶梯与徽章图形">
+              <rect width="260" height="260" fill="#201a12"/>
+              <g fill="#3a2f1d">
+                <rect x="50" y="170" width="50" height="50"/><rect x="108" y="136" width="50" height="84"/>
+                <rect x="166" y="100" width="50" height="120"/>
+              </g>
+              <circle cx="191" cy="72" r="22" fill="#ffc24d"/>
+              <path d="M183 72 L189 78 L201 66" stroke="#231a05" stroke-width="3" fill="none"/>
+              <path d="M60 210 H230" stroke="#ffc24d" stroke-width="2" opacity=".5"/>
+            </svg>
+          </div>
+          <div class="n911-topic-body">
+            <h3>「爆料新人榜」月度推荐</h3>
+            <p>每月从社区投稿中选出十位新面孔，给第一次发声的人一束光。</p>
+            <span class="n911-topic-status n911-wait">11 月榜单 · 投票中</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者矩阵 -->
+  <section class="n911-section" id="n911-creators">
+    <div class="n911-wrap">
+      <div class="n911-section-head">
+        <div>
+          <span class="n911-eyebrow">Creators</span>
+          <h2 class="n911-h2">创作者矩阵</h2>
+          <p class="n911-sub">点击卡片可查看创作者档案，了解他们与 911大赛爆料 的长期合作方向。</p>
+        </div>
+      </div>
+      <div class="n911-creator-grid">
+        <article class="n911-creator" tabindex="0" data-n911-creator="黎岸影像|现场记录 / 赛台置景|86 部作品|3.2 万粉丝|跟拍赛事现场六年，擅长在混乱里找到秩序感，画面克制、信息密度高。">
+          <div class="n911-creator-avatar" style="background:linear-gradient(140deg,#4d8dff,#2b4f99)">黎</div>
+          <h3>黎岸影像</h3>
+          <div class="n911-field">现场记录 · 赛台置景</div>
+          <p>跟拍赛事现场六年，擅长在混乱里找到秩序感，画面克制、信息密度高。</p>
+          <div class="n911-creator-stats">
+            <div><b>86</b>作品</div><div><b>3.2万</b>粉丝</div>
+          </div>
+        </article>
+        <article class="n911-creator" tabindex="0" data-n911-creator="周末剪辑室|剪辑教程 / 内容结构|112 部作品|5.7 万粉丝|把复杂流程讲成可执行的步骤，课程式短片是招牌，教程平均完播率超过七成。">
+          <div class="n911-creator-avatar" style="background:linear-gradient(140deg,#3ddc84,#1c7d4c)">周</div>
+          <h3>周末剪辑室</h3>
+          <div class="n911-field">剪辑教程 · 内容结构</div>
+          <p>把复杂流程讲成可执行的步骤，课程式短片是招牌，教程平均完播率超过七成。</p>
+          <div class="n911-creator-stats">
+            <div><b>112</b>作品</div><div><b>5.7万</b>粉丝</div>
+          </div>
+        </article>
+        <article class="n911-creator" tabindex="0" data-n911-creator="程野的取景框|设备测评 / 暗光拍摄|64 部作品|2.4 万粉丝|做测评先说结论再说参数，从不回避失败样片，被观众称为最不怕丢脸的评测者。">
+          <div class="n911-creator-avatar" style="background:linear-gradient(140deg,#ffc24d,#a87418)">程</div>
+          <h3>程野的取景框</h3>
+          <div class="n911-field">设备测评 · 暗光拍摄</div>
+          <p>做测评先说结论再说参数，从不回避失败样片，被观众称为最不怕丢脸的评测者。</p>
+          <div class="n911-creator-stats">
+            <div><b>64</b>作品</div><div><b>2.4万</b>粉丝</div>
+          </div>
+        </article>
+        <article class="n911-creator" tabindex="0" data-n911-creator="顾言访谈录|人物访谈 / 语言表达|48 部作品|4.1 万粉丝|访谈节奏慢而稳，擅长让对方说出没准备好的那句话，作品常被用作访谈教学案例。">
+          <div class="n911-creator-avatar" style="background:linear-gradient(140deg,#8f7fbf,#594a85)">顾</div>
+          <h3>顾言访谈录</h3>
+          <div class="n911-field">人物访谈 · 语言表达</div>
+          <p>访谈节奏慢而稳，擅长让对方说出没准备好的那句话，作品常被用作访谈教学案例。</p>
+          <div class="n911-creator-stats">
+            <div><b>48</b>作品</div><div><b>4.1万</b>粉丝</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作灵感 -->
+  <section class="n911-section" id="n911-ideas">
+    <div class="n911-wrap">
+      <div class="n911-section-head">
+        <div>
+          <span class="n911-eyebrow">Ideas</span>
+          <h2 class="n911-h2">创作灵感与选题工具</h2>
+          <p class="n911-sub">给准备投稿的你一点结构化帮助：从标题到剪辑，把想法变成可发布的内容。</p>
+        </div>
+      </div>
+      <div class="n911-idea-grid">
+        <div class="n911-idea">
+          <div class="n911-idea-icon">题</div>
+          <h3>标题建议</h3>
+          <p>避免悬浮形容词，把时间、地点、变化写进标题。</p>
+          <ul>
+            <li>「第三轮开赛前 90 分钟，后台发生了什么」</li>
+            <li>「同一机位连拍四届，我拍到的赛台变化」</li>
+            <li>「计时系统换了，参赛者的节奏也跟着变了」</li>
+          </ul>
+        </div>
+        <div class="n911-idea">
+          <div class="n911-idea-icon">剪</div>
+          <h3>剪辑思路</h3>
+          <p>先立事实，再给情绪。前十五秒决定观众是否愿意留下。</p>
+          <ul>
+            <li>开头用一段现场原声，不加音乐</li>
+            <li>中段插入一张时间线图锚定事件顺序</li>
+            <li>结尾留三秒空镜，不用总结旁白</li>
+          </ul>
+        </div>
+        <div class="n911-idea">
+          <div class="n911-idea-icon">稿</div>
+          <h3>脚本框架</h3>
+          <p>现场、原因、影响三段式，每段控制在四十秒内。</p>
+          <ul>
+            <li>现场：用可核对的时间点开场</li>
+            <li>原因：至少两个独立来源</li>
+            <li>影响：说清对参与者意味着什么</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="n911-section" id="n911-reviews">
+    <div class="n911-wrap">
+      <div class="n911-section-head">
+        <div>
+          <span class="n911-eyebrow">Voices</span>
+          <h2 class="n911-h2">社区评价</h2>
+          <p class="n911-sub">来自创作者、观众与合作方的真实反馈，我们保留原文语气，不做修饰。</p>
+        </div>
+      </div>
+      <div class="n911-review-grid">
+        <article class="n911-review">
+          <div class="n911-review-head">
+            <span class="n911-avatar" style="background:#4d8dff">陈</span>
+            <div><b>陈以衡</b><br><small>赛事摄影 · 社区作者</small></div>
+            <span class="n911-stars">★★★★★</span>
+          </div>
+          <p>第一次投稿被编辑退回来，附了一段很长的修改建议，连哪一秒的镜头该剪都标了时间码。说实话有点被吓到，但也确实是那次之后我才知道什么叫信息完整的片子。</p>
+        </article>
+        <article class="n911-review">
+          <div class="n911-review-head">
+            <span class="n911-avatar" style="background:#3ddc84;color:#0c1210">许</span>
+            <div><b>许南枝</b><br><small>观众 · 连续三个月活跃</small></div>
+            <span class="n911-stars">★★★★★</span>
+          </div>
+          <p>喜欢这里的一点是不催更也不刷屏。想看爆料就来翻专题，每一条都标了更新时间，翻旧内容也不会一头雾水。对我来说，这比推荐算法好用多了。</p>
+        </article>
+        <article class="n911-review">
+          <div class="n911-review-head">
+            <span class="n911-avatar" style="background:#ffc24d;color:#2b1f08">韩</span>
+            <div><b>韩屿</b><br><small>企业合作 · 品牌运营</small></div>
+            <span class="n911-stars">★★★★☆</span>
+          </div>
+          <p>我们做过一期联名企划，从方案沟通到成片上线用了三周。中间最难的是素材授权，平台把流程讲得很清楚，反而省了时间。唯一想吐槽的是排期太满，好档期要靠抢。</p>
+        </article>
+        <article class="n911-review">
+          <div class="n911-review-head">
+            <span class="n911-avatar" style="background:#8f7fbf">林</span>
+            <div><b>林小满</b><br><small>剪辑爱好者 · 新人榜提名</small></div>
+            <span class="n911-stars">★★★★★</span>
+          </div>
+          <p>教程区是真的有用。那条讲节奏的片子我反复看了四遍，照着改了自己一条旧片，播放量翻了三倍。评论区里还有作者本人回复，不是客气话，是真的在讨论镜头。</p>
+        </article>
+        <article class="n911-review">
+          <div class="n911-review-head">
+            <span class="n911-avatar" style="background:#ff8a8a;color:#2b0d0d">钟</span>
+            <div><b>钟直</b><br><small>行业观察 · 长期读者</small></div>
+            <span class="n911-stars">★★★★☆</span>
+          </div>
+          <p>复盘笔记是我每周固定会看的内容。它不吹数据，甚至会写清楚哪一期判断错了。这种愿意暴露偏差的态度，在赛事内容里挺少见，也让我更愿意相信它说的其他事。</p>
+        </article>
+        <article class="n911-review">
+          <div class="n911-review-head">
+            <span class="n911-avatar" style="background:#7fbfa8;color:#0d1f19">苏</span>
+            <div><b>苏迟</b><br><small>本地观众 · 参与现场征集</small></div>
+            <span class="n911-stars">★★★★★</span>
+          </div>
+          <p>投稿入口不藏，要求也写得明白：什么能拍、什么不能拍、拍到人怎么办。我上传了一段街角素材，第二天收到审核通过的提示，还附了使用范围说明，挺安心的。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 & 合作 -->
+  <section class="n911-section" id="n911-logs">
+    <div class="n911-wrap">
+      <div class="n911-section-head">
+        <div>
+          <span class="n911-eyebrow">Newsroom</span>
+          <h2 class="n911-h2">企业动态与合作伙伴</h2>
+          <p class="n911-sub">官方发布、社区更新与合作进展，按时间倒序排列。</p>
+        </div>
+      </div>
+      <div class="n911-log-partner">
+        <div>
+          <div class="n911-log-item">
+            <div class="n911-log-date">2026-11-19</div>
+            <div><h3>「爆料背后」第六集上线，同步开放第七集报名</h3><p>本集跟拍后台核实流程，报名通道开放至 11 月 26 日，面向全部认证创作者。</p></div>
+          </div>
+          <div class="n911-log-item">
+            <div class="n911-log-date">2026-11-16</div>
+            <div><h3>内容检索升级：支持按时间、机位、创作者组合筛选</h3><p>本次更新覆盖全部历史条目，旧内容也可以按事件脉络串联查看。</p></div>
+          </div>
+          <div class="n911-log-item">
+            <div class="n911-log-date">2026-11-11</div>
+            <div><h3>11 月新人榜提名名单公布，共 24 位创作者入围</h3><p>投票期为一周，最终十位入选者将获得专题推荐与创作支持。</p></div>
+          </div>
+          <div class="n911-log-item">
+            <div class="n911-log-date">2026-11-05</div>
+            <div><h3>版权协助计划启动：为社区作者提供登记与存证支持</h3><p>首批开放 100 个名额，覆盖影像、音频与图文三类作品。</p></div>
+          </div>
+        </div>
+        <div class="n911-partner-grid">
+          <div class="n911-partner">赛事影像联盟</div>
+          <div class="n911-partner">城市记录计划</div>
+          <div class="n911-partner">开源剪辑社区</div>
+          <div class="n911-partner">创作者版权服务站</div>
+          <div class="n911-partner">青年影像扶持基金</div>
+          <div class="n911-partner">本地文化观察所</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="n911-section" id="n911-faq">
+    <div class="n911-wrap">
+      <div class="n911-section-head" style="justify-content:center;text-align:center">
+        <div>
+          <span class="n911-eyebrow">Help</span>
+          <h2 class="n911-h2">常见问题</h2>
+          <p class="n911-sub" style="margin:0 auto">关于投稿、版权、合作与内容规范的说明，点击展开查看。</p>
+        </div>
+      </div>
+      <div class="n911-faq">
+        <details open>
+          <summary>如何向「911大赛爆料」投稿？</summary>
+          <p>通过页面底部的联系表单提交作品链接与简要说明，或在本站注册后进入投稿通道。我们要求作品为原创或已获授权，涉及现场人物的画面需做必要处理。审核通常在三个工作日内完成，结果会以站内消息通知。</p>
+        </details>
+        <details>
+          <summary>爆料内容的来源如何核实？</summary>
+          <p>我们采用「三要素 + 双来源」原则：时间、地点、事件三要素缺一不可，关键信息需至少两个独立来源交叉印证。无法核实的线索不会以爆料名义发布，可能转为社区讨论内容并标注状态。</p>
+        </details>
+        <details>
+          <summary>作品版权归谁？平台会如何使用？</summary>
+          <p>版权始终归创作者所有。平台仅在获得授权后用于站内展示与专题推荐，商业使用需另行签署协议。我们提供版权登记协助，也支持创作者随时下架自己的作品。</p>
+        </details>
+        <details>
+          <summary>是否可以与品牌方合作定制内容？</summary>
+          <p>可以。企业合作栏目支持联名企划、专题冠名与共创纪录短片，我们会明确标注合作属性，不参与虚构事实。合作排期建议提前三到四周沟通，高峰期需更早预约。</p>
+        </details>
+        <details>
+          <summary>社区对评论和互动有什么规范？</summary>
+          <p>我们鼓励基于事实的讨论，反对人身攻击、未核实指控与诱导性言论。评论区采用人工与规则结合的治理方式，被多次举报的内容会进入复核流程，处理结果对当事人可见。</p>
+        </details>
+        <details>
+          <summary>如何成为认证创作者？</summary>
+          <p>在站内累计发布三部以上通过审核的原创作品，且内容方向清晰、更新稳定，即可申请认证。认证创作者享有专题推荐、选题支持与创作工具优先体验等权益。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="n911-section" id="n911-contact">
+    <div class="n911-wrap">
+      <div class="n911-contact">
+        <div>
+          <span class="n911-eyebrow">Contact</span>
+          <h2 class="n911-h2">投稿、爆料与合作</h2>
+          <p>如果你手上有值得记录的现场，或者希望与我们共建内容企划，欢迎留下信息。我们尊重每一条线索，也尊重每一位提供线索的人。</p>
+          <div class="n911-contact-list">
+            <div><span>投稿邮箱</span>submit@n911-studio.example</div>
+            <div><span>合作咨询</span>partner@n911-studio.example</div>
+            <div><span>工作时间</span>周一至周五 10:00–19:00</div>
+            <div><span>办公地址</span>城市影像中心 B 座 7 层</div>
+          </div>
+        </div>
+        <form class="n911-contact-form" id="n911-contact-form">
+          <input type="text" placeholder="你的称呼" required aria-label="你的称呼">
+          <input type="email" placeholder="联系方式（邮箱）" required aria-label="联系方式">
+          <textarea rows="4" placeholder="想说的内容：线索、作品链接或合作意向" required aria-label="留言内容"></textarea>
+          <button class="n911-btn n911-btn-primary" type="submit">提交信息</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="n911-footer">
+  <div class="n911-wrap">
+    <div class="n911-footer-grid">
+      <div class="n911-footer-brand">
+        <div class="n911-logo">
+          <span class="n911-logo-mark">911</span>
+          <span>大赛爆料<span class="n911-logo-sub">OFFICIAL SITE</span></span>
+        </div>
+        <p>911大赛爆料官方网站，由内容团队持续运营的赛事影像社区。我们坚持原创、正版与高清标准，致力于为创作者与企业搭建值得信赖的内容生态。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#n911-focus">焦点爆料</a></li>
+          <li><a href="#n911-videos">热门内容</a></li>
+          <li><a href="#n911-topics">专题企划</a></li>
+          <li><a href="#n911-reviews">社区评价</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#n911-about">品牌解析</a></li>
+          <li><a href="#n911-creators">创作者矩阵</a></li>
+          <li><a href="#n911-logs">企业动态</a></li>
+          <li><a href="#n911-faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与</h4>
+        <ul>
+          <li><a href="#n911-contact">投稿入口</a></li>
+          <li><a href="#n911-ideas">创作灵感</a></li>
+          <li><a href="#n911-contact">商务合作</a></li>
+          <li><a href="#n911-top">返回首页</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="n911-footer-bottom">
+      <span>© 2026 911大赛爆料 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容备案：N911-2026-1119 · 社区内容请遵守发布规范</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 通用弹窗 -->
+<div class="n911-modal-mask" id="n911-modal-mask">
+  <div class="n911-modal" role="dialog" aria-modal="true" aria-labelledby="n911-modal-title">
+    <button class="n911-modal-close" id="n911-modal-close" aria-label="关闭">×</button>
+    <h3 id="n911-modal-title">提示</h3>
+    <p id="n911-modal-body">内容</p>
+    <div id="n911-modal-extra"></div>
+  </div>
+</div>
+
+<div class="n911-toast" id="n911-toast">已复制</div>
+<button class="n911-backtop" id="n911-backtop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+  var d = document;
+  var toastEl = d.getElementById('n911-toast');
+  var toastTimer = null;
+
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('n911-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('n911-show'); }, 2000);
+  }
+
+  /* 吸顶偏移：公告条 + 页头高度 */
+  function setScrollOffset(){
+    var top = d.querySelector('.n911-sticky-top');
+    if(!top) return;
+    var h = top.offsetHeight;
+    d.documentElement.style.scrollPaddingTop = (h + 12) + 'px';
+  }
+  setScrollOffset();
+  window.addEventListener('resize', setScrollOffset);
+
+  /* 移动端导航 */
+  var burger = d.getElementById('n911-hamburger');
+  var mobileNav = d.getElementById('n911-mobile-nav');
+  burger.addEventListener('click', function(){
+    var open = mobileNav.classList.toggle('n911-show');
+    burger.classList.toggle('n911-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileNav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      mobileNav.classList.remove('n911-show');
+      burger.classList.remove('n911-open');
+      burger.setAttribute('aria-expanded','false');
+    }
+  });
+
+  /* 搜索筛选 */
+  var searchInput = d.getElementById('n911-search-input');
+  var searchBtn = d.getElementById('n911-search-btn');
+  var videoCards = Array.prototype.slice.call(d.querySelectorAll('#n911-video-grid .n911-card'));
+  var emptyTip = d.getElementById('n911-video-empty');
+  var filterTip = d.getElementById('n911-filter-tip');
+
+  function doSearch(){
+    var q = (searchInput.value || '').trim().toLowerCase();
+    var shown = 0;
+    videoCards.forEach(function(card){
+      var kw = (card.getAttribute('data-n911-keywords') || '') + ' ' + card.textContent.toLowerCase();
+      var hit = !q || kw.toLowerCase().indexOf(q) !== -1;
+      card.classList.toggle('n911-hidden', !hit);
+      if(hit) shown++;
+    });
+    emptyTip.classList.toggle('n911-show', shown === 0);
+    filterTip.textContent = q ? ('匹配 ' + shown + ' 条内容') : ('共 ' + videoCards.length + ' 条内容');
+    if(q){
+      toast(shown ? ('找到 ' + shown + ' 条相关内容') : '没有找到匹配内容');
+      var v = d.getElementById('n911-videos');
+      if(v) v.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+  });
+  searchInput.addEventListener('input', function(){
+    if(!searchInput.value.trim()) doSearch();
+  });
+
+  /* 点赞 */
+  d.querySelectorAll('[data-n911-like]').forEach(function(btn){
+    var b = btn.querySelector('b');
+    var n = parseInt((b && b.textContent) || '0', 10) || 0;
+    btn.addEventListener('click', function(){
+      var liked = btn.classList.toggle('n911-liked');
+      var span = btn.querySelector('span');
+      if(liked){ n++; if(span) span.textContent = '♥'; toast('已点赞'); }
+      else { n = Math.max(0, n - 1); if(span) span.textContent = '♡'; toast('已取消点赞'); }
+      if(b) b.textContent = n;
+    });
+  });
+
+  /* 收藏 */
+  d.querySelectorAll('[data-n911-save]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var saved = btn.classList.toggle('n911-saved');
+      var span = btn.querySelector('span');
+      if(span) span.textContent = saved ? '★' : '☆';
+      toast(saved ? '已加入收藏' : '已取消收藏');
+    });
+  });
+
+  /* 弹窗工具 */
+  var mask = d.getElementById('n911-modal-mask');
+  var modalTitle = d.getElementById('n911-modal-title');
+  var modalBody = d.getElementById('n911-modal-body');
+  var modalExtra = d.getElementById('n911-modal-extra');
+  var modalClose = d.getElementById('n911-modal-close');
+
+  function openModal(title, body, extraHTML){
+    modalTitle.textContent = title;
+    modalBody.textContent = body;
+    modalExtra.innerHTML = extraHTML || '';
+    mask.classList.add('n911-show');
+  }
+  function closeModal(){
+    mask.classList.remove('n911-show');
+  }
+  modalClose.addEventListener('click', closeModal);
+  mask.addEventListener('click', function(e){ if(e.target === mask) closeModal(); });
+  d.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  /* 评论 */
+  d.querySelectorAll('[data-n911-comment]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openModal('评论区（示例）',
+        '本条目共 132 条评论。我们鼓励基于事实的讨论：可以补充线索，可以提出疑问，但请避免未核实指控。',
+        '<div style="font-size:13px;color:#8d93a6;line-height:1.8">· 现场观众：置景更换确实比预告提前了一小时。<br>· 摄影爱好者：机位高度调整后视野好很多。<br>· 社区编辑：以上信息已同步至条目附注。</div>');
+    });
+  });
+
+  /* 分享 */
+  var shareHTML = '<div class="n911-share-row">' +
+    '<button type="button" data-n911-share-to="微信">微信</button>' +
+    '<button type="button" data-n911-share-to="微博">微博</button>' +
+    '<button type="button" data-n911-share-to="QQ">QQ</button>' +
+    '<button type="button" data-n911-copy>复制链接</button>' +
+    '</div>';
+
+  function bindShareBtns(){
+    modalExtra.querySelectorAll('[data-n911-share-to]').forEach(function(b){
+      b.addEventListener('click', function(){
+        toast('已生成分享提示：' + b.getAttribute('data-n911-share-to'));
+      });
+    });
+    var copyBtn = modalExtra.querySelector('[data-n911-copy]');
+    if(copyBtn){
+      copyBtn.addEventListener('click', function(){
+        var link = '911大赛爆料官方网站 · 焦点内容页';
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(link).then(function(){
+            toast('链接已复制');
+          }).catch(function(){ toast('复制失败，请手动选择'); });
+        } else {
+          toast('链接已复制');
+        }
+      });
+    }
+  }
+
+  d.querySelectorAll('[data-n911-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openModal('分享这条爆料', '选择分享渠道，或复制链接发给朋友。', shareHTML);
+      bindShareBtns();
+    });
+  });
+
+  var heroShare = d.getElementById('n911-share-hero');
+  if(heroShare){
+    heroShare.addEventListener('click', function(){
+      openModal('分享本站', '把 911大赛爆料 官方网站 分享给同样关注赛事现场的朋友。', shareHTML);
+      bindShareBtns();
+    });
+  }
+
+  /* 创作者弹窗 */
+  d.querySelectorAll('[data-n911-creator]').forEach(function(card){
+    function show(){
+      var parts = (card.getAttribute('data-n911-creator') || '').split('|');
+      var name = parts[0] || '创作者';
+      var field = parts[1] || '';
+      var works = parts[2] || '';
+      var fans = parts[3] || '';
+      var intro = parts[4] || '';
+      openModal(name + ' · 创作者档案',
+        intro,
+        '<div style="font-size:13.5px;color:#c3c8d6;line-height:2">擅长领域：' + field +
+        '<br>作品数量：' + works + '<br>粉丝规模：' + fans +
+        '<br>合作方向：专题联合企划 / 现场跟拍 / 教程共创</div>');
+    }
+    card.addEventListener('click', show);
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(); }
+    });
+  });
+
+  /* 投稿表单 */
+  var form = d.getElementById('n911-contact-form');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var emailInput = form.querySelector('input[type="email"]');
+      var email = emailInput ? emailInput.value.trim() : '';
+      if(!email || email.indexOf('@') === -1){
+        toast('请填写有效的邮箱');
+        return;
+      }
+      form.reset();
+      toast('已收到你的信息，我们会在三个工作日内回复');
+    });
+  }
+
+  /* 回到顶部 */
+  var backTop = d.getElementById('n911-backtop');
+  window.addEventListener('scroll', function(){
+    backTop.classList.toggle('n911-show', window.scrollY > 520);
+  });
+  backTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+                  </html>
